@@ -58,7 +58,7 @@ def room_coefficient(oppervlaktes, absorpties):
     # R[f] = sum(S_i * alpha_i[f])/ 1 - (alpha_gemiddeld[f])
     
     #input: oppervlaktes: [N] array 
-    #       absorpties:   [MxN] array, absorptie per oppervlk en per frequentie-band
+    #       absorpties:   [NxM] array, absorptie per oppervlk en per frequentie-band
     #  output:  [M] array, per frequentie-band
     S_keer_alpha = absorpties.dot(oppervlaktes)
     S_tot = np.sum(oppervlaktes)
@@ -66,7 +66,7 @@ def room_coefficient(oppervlaktes, absorpties):
     
     return S_keer_alpha/(1-alpha_gem)
     
- 
+    
     
     
 # program----------------------------------------------
